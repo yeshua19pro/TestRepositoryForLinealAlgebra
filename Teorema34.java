@@ -83,7 +83,7 @@ public class Teorema34 {
                         }
                     }
                     //calcula el determinante usando clase externa llamada Determinante
-            int det = Determinante.determinante(matrix);
+            int det = Tools.determinante(matrix);
             System.out.println("Determinante de la matriz: " + det);
             
             //Evalua el Teorema 3.4
