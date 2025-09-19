@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Teorema31 extends Teoremas {
     Scanner sc = new Scanner(System.in);
-    public Teorema35(int[][] matriz) {
+    public Teorema31(int[][] matriz) {
         super(matriz);
     }
 

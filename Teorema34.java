@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class Teorema34 extends Teoremas {   
     public Teorema34(int[][] matriz) {
         super(matriz);
-        //TODO Auto-generated constructor stub
     }
 
     /**
@@ -28,30 +27,6 @@ public class Teorema34 extends Teoremas {
      * @param args 
      */
     
-    public static void main(String[] args) {
-       
-        //crea matriz n x n en base al input del usuario
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingresa el tamaño de la matriz cuadrada");
-        int n = scanner.nextInt();
-        int [][] matriz = new int[n][n];
-        
-        //llena matriz
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if(j == 1) {
-                    matriz[i][j] = 0;
-                } else {
-                    matriz[i][j] = (i + 1) * (j + 2);
-                }
-            }
-        }
-
-        // Crear objeto y aplicar el teorema
-        Teorema34 t34 = new Teorema34(matriz);
-        t34.aplicar();
-    }
-
     @Override
     public void aplicar() {
         int n = matriz.length;
