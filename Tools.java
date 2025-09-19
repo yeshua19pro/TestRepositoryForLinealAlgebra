@@ -5,7 +5,7 @@
  * Incluye un métodos para calcular funciones y propiedades de las matrices
  *
  * 
- * @author Miguel Angel
+ * @author Miguel Angel, Sophia Narvaez
  */
 public class Tools {
 
@@ -60,18 +60,37 @@ public class Tools {
             System.out.print(matriz[i][n - 1 - i] + " ");
         }
     }
-        /**
+
+    /**
      * Muestra una matriz en formato de tabla.
-     * Incluido por @author Miguel para facilitar la visualización de matrices en los teoremas.
      * @param matriz matriz cuadrada
      */
     public static void mostrarMatriz(int[][] matriz) {
-        for (int[] fila : matriz) {
-            for (int valor : fila) {
-                System.out.printf("%4d", valor);
+        int n = matriz.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matriz[i][j] + " ");
             }
             System.out.println();
         }
+    }
+    /**
+     * Calcula la transpuesta de una matriz cuadrada.
+     * La transpuesta se obtiene intercambiando filas por columnas.
+     *
+     * @param A matriz cuadrada de enteros (int[][]).
+     *          Debe ser de tamaño n x n.
+     * @return la matriz transpuesta (int[][]).
+     */
+    public static int[][] transpuesta(int[][] A) {
+        int n = A.length;
+        int[][] At = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                At[j][i] = A[i][j];
+            }
+        }
+        return At;
     }
 
 }
