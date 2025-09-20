@@ -1,17 +1,10 @@
-
 import java.util.Scanner;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-
 /**
- * La clase Tools contiene métodos matemáticos útiles
- * para trabajar con matrices cuadradas en Java.
+ * La clase Tools contiene métodos matemáticos útiles para trabajar con matrices cuadradas en Java.
  * <p>
- * Incluye un métodos para calcular funciones y propiedades de las matrices
+ * Incluye utilidades para calcular el determinante mediante cofactores, mostrar matrices, obtener
+ * transpuestas, submatrices, cofactores y adjuntas, así como para imprimir la diagonal transversal. Y
+ * estos metodos son utilizados en diferentes implementaciones de los teoremas.
  *
  * @author Miguel Angel, Sophia Narvaez
  */
@@ -21,8 +14,7 @@ public class Tools {
      * Calcula el determinante de una matriz cuadrada de forma recursiva,
      * utilizando el método de cofactores (expansión por la primera fila).
      *
-     * @param A matriz cuadrada de enteros (int[][]).
-     *          Debe ser de tamaño n x n.
+     * @param A matriz cuadrada de enteros (int[][]). Debe ser de tamaño n x n.
      * @return el valor entero del determinante de la matriz.
      */
     public static int determinante(int[][] A) {
@@ -56,8 +48,7 @@ public class Tools {
      * La diagonal transversal va desde la esquina superior derecha
      * hasta la esquina inferior izquierda.
      *
-     * @param matriz matriz cuadrada de enteros (int[][]).
-     *               Debe ser de tamaño n x n.
+     * @param matriz matriz cuadrada de enteros (int[][]). Debe ser de tamaño n x n.
      */
     public static void Transversal(int[][] matriz) {
         int n = matriz.length;
@@ -70,7 +61,7 @@ public class Tools {
     /**
      * Muestra una matriz en formato de tabla.
      *
-     * @param matriz matriz cuadrada
+     * @param matriz matriz cuadrada (nxn).
      */
     public static void mostrarMatriz(int[][] matriz) {
         int n = matriz.length;
@@ -86,9 +77,8 @@ public class Tools {
      * Calcula la transpuesta de una matriz cuadrada.
      * La transpuesta se obtiene intercambiando filas por columnas.
      *
-     * @param A matriz cuadrada de enteros (int[][]).
-     *          Debe ser de tamaño n x n.
-     * @return la matriz transpuesta (int[][]).
+     * @param A matriz cuadrada de enteros (int[][]). Debe ser de tamaño n x n.
+     * @return la matriz transpuesta como nuevo arreglo bidimensional (int[][]).
      */
     public static int[][] transpuesta(int[][] A) {
         int n = A.length;
@@ -102,14 +92,13 @@ public class Tools {
     }
 
     /**
-     * Calcula una submatriz eliminando una fila y columna
+     * Calcula una submatriz eliminando una fila y columna espeificas
      *
      * @param matriz  matriz original
      * @param fila    fila que se elimina
      * @param columna columna que se elimina
-     * @return la submatriz int [][]
+     * @return la submatriz resultante int [][]
      */
-
     //Submatriz de un elemento en fila i columna j
     public static int[][] subMatriz(int[][] matriz, int fila, int columna) {
         int n = matriz.length;
@@ -131,11 +120,9 @@ public class Tools {
     /**
      * Calcula la matriz de cofactores
      *
-     * @param matriz matriz original
+     * @param matriz matriz cuadrada original
      * @return matriz de cofactores int[][]
      */
-
-    //Matriz cofactores
     public static int[][] cofactores(int[][] matriz) {
         int n = matriz.length;
         int[][] cofactores = new int[n][n];
@@ -154,12 +141,11 @@ public class Tools {
 
     /**
      * Calcula la matriz adjunta (transpuesta de la matriz cofactores)
+     * La adjunta se obtiene como la transpuesta de la matriz de cofactores
      *
      * @param matriz matriz original
      * @return matriz adjunta int[][]
      */
-
-    // calcula matriz adjunta (transpuesta de la matriz de cofactores)
     public static int[][] adjunta(int[][] matriz) {
         //aqui se usa metodo transpuesta de Tools
         return Tools.transpuesta(cofactores(matriz));
