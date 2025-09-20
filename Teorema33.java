@@ -1,15 +1,19 @@
+import java.util.Scanner;
+
 public class Teorema33 extends Teoremas{
 
     public Teorema33(int[][] matriz) {
         super(matriz);
     }
+    Scanner sc = new Scanner(System.in);
 
     @Override
     public void aplicar() {
-        System.out.println("Se ha generado correctamente la matriz:)");
-        Tools.mostrarMatriz(matriz);
-
+        System.out.println("Bienvenido al Teorema 3.3!");
+        System.out.println("El Teorema 3.3 propone que si una matriz tiene dos filas iguales, su determinante es 0 \n(enter para continuar)");
         System.out.println("Ahora verificaremos si tiene dos filas identicas");
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
         if (verificarFilas(matriz)) {
             System.out.println("Determinante = 0 (Teorema 3.3 si se cumple. La matriz tiene dos filas iguales)");
         } else {

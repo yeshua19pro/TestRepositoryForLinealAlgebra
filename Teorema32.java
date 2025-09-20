@@ -72,6 +72,15 @@ public class Teorema32 extends Teoremas {
                     break;
                 default:
                     System.out.println("Opcion no valida, se seleccionaran filas por defecto");
+                    do {
+                        System.out.println("Que fila te gustaria intercambiar? (0 = primera fila)");
+                        fila1 = sc.nextInt();
+                    } while (fila1 < 0 || fila1 >= n);
+                    do {
+                        System.out.println("Por que fila te gustaria intercambiar? (0 = primera fila)");
+                        fila2 = sc.nextInt();
+                    } while (fila2 < 0 || fila2 >= n || fila2 == fila1);
+                    interF(matriz, fila1, fila2);
                     break;
             }
             System.out.println("Matriz modificada:");
