@@ -1,55 +1,44 @@
 import java.util.Scanner;
-
 /**
- * Clase que demuestra el Teorema 3.2.
- * Teorema 3.2: Si se intercambian dos filas o dos columnas de una matriz nxn,
- * el determinante de la nueva matriz obtenida es igual al determinante de la
- * anterior matriz pero con el signo invertido.
+ * <p>Teorema 3.2 - Algebra lineal</p>
+ * Se representa de forma interactiva, este teorema establece que al intercambiar dos filas o
+ * dos columnas de una matriz cuadrada, el determinante de la nueva matriz es el opuesto del
+ * determinante original.
+ *
+ * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools}
+ * para mostrar matrices y calcular determinantes. Durante la ejecución, se solicita
+ * al usuario elegir filas o columnas a intercambiar y se comprueba el enunciado
+ * del teorema mediante la comparación de determinantes. Ademas se guia al usuario con un menu.</p>
  *
  * @author Sunny
  */
 public class Teorema32 extends Teoremas {
-    public int[][] interF(int[][] matriz, int f1, int f2) {
-        for (int j = 0; j < n; j++) {
-            int temp = matriz[f1][j];
-            matriz[f1][j] = matriz[f2][j];
-            matriz[f2][j] = temp;
-        }
-        return matriz;
-    }
-    public int[][] interCol(int[][] matriz, int c1, int c2) {
-        for (int i = 0; i < n; i++) {
-            int temp = matriz[i][c1];
-            matriz[i][c1] = matriz[i][c2];
-            matriz[i][c2] = temp;
-        }
-        return matriz;
-    }
     Scanner sc = new Scanner(System.in);
-    public Teorema32(int[][] matriz) {
-        super(matriz);
-    }
     int n = matriz.length;
     int fila1 = 0;
     int fila2 = 0;
     int col1 = 0;
     int col2 = 0;
     int det = Tools.determinante(matriz);
-
     /**
-     * Este método guía al usuario a través de los siguientes pasos:
-     * <ul>
-     *   <li>Verifica que la matriz sea al menos de tamaño 2x2 y que su determinante no sea cero.</li>
-     *   <li>Muestra la matriz original y su determinante.</li>
-     *   <li>Permite al usuario elegir si desea intercambiar filas o columnas, y seleccionar cuáles intercambiar.</li>
-     *   <li>Realiza el intercambio seleccionado y muestra la matriz modificada.</li>
-     *   <li>Calcula y muestra el determinante de la matriz modificada.</li>
-     *   <li>Demuestra que el determinante de la matriz modificada es el opuesto del original, cumpliendo el teorema.</li>
-     * </ul>
-     * 
-     * Se utiliza la consola para la interacción con el usuario.
+     * Crea una nueva instancia del teorema 3.2 con la matriz dada.
+     *
+     * @param matriz matriz cuadrada (nxn) en la cual se aplicará el teorema
      */
-
+    public Teorema32(int[][] matriz) {
+        super(matriz);
+    }
+    /**
+     * <p>El procedimiento de la demostracion consiste en:</p>
+     * <ol>
+     *  <li>Verificar que la matriz sea de tamaño válido y que su determinante no sea cero.</li>
+     *  <li>Mostrar la matriz original y su determinante.</li>
+     *  <li>Solicitar al usuario si desea intercambiar filas o columnas, y los índices correspondientes.</li>
+     *  <li>Aplicar el intercambio seleccionado y mostrar la matriz modificada.</li>
+     *  <li>Calcular y mostrar el determinante de la nueva matriz.</li>
+     *  <li>Confirmar que el determinante de la nueva matriz es el opuesto del original.</li>
+     * </ol>
+     */
     @Override
     public void aplicar() {
         System.out.println("Bienvenido al Teorema 3.2!");
@@ -117,5 +106,39 @@ public class Teorema32 extends Teoremas {
             sc.nextLine();
             System.out.println("Como pudiste observar el determinante de tu matriz es: " + det + " y el determinante de la matriz modificada es: " + detMod + " por lo tanto, el Teorema 3.2 se cumple!");
         }
+    }
+
+    // Metodos internos (intercambio de filas y columnas)
+    /**
+     * Intercambia dos filas de la matriz.
+     *
+     * @param matriz matriz sobre la cual se realiza el intercambio.
+     * @param f1 índice de la primera fila.
+     * @param f2 índice de la segunda fila.
+     * @return con las filas intercambiadas
+     */
+    public int[][] interF(int[][] matriz, int f1, int f2) {
+        for (int j = 0; j < n; j++) {
+            int temp = matriz[f1][j];
+            matriz[f1][j] = matriz[f2][j];
+            matriz[f2][j] = temp;
+        }
+        return matriz;
+    }
+    /**
+     * Intercambia dos columnas de la matriz.
+     *
+     * @param matriz matriz sobre la cual se realiza el intercambio
+     * @param c1 índice de la primera columna
+     * @param c2 índice de la segunda columna
+     * @return con las columnas intercambiadas
+     */
+    public int[][] interCol(int[][] matriz, int c1, int c2) {
+        for (int i = 0; i < n; i++) {
+            int temp = matriz[i][c1];
+            matriz[i][c1] = matriz[i][c2];
+            matriz[i][c2] = temp;
+        }
+        return matriz;
     }
 }
