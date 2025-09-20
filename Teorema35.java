@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * La clase {@code Teorema35} implementa el teorema 3.5 de determinantes,
@@ -7,15 +9,6 @@
  * Esta clase extiende la clase {@code Teoremas} y permite aplicar la operación sobre una fila específica
  * de una matriz cuadrada, mostrando la matriz original, la matriz modificada, ambos determinantes
  * y verificando si se cumple el teorema.
- * 
- * <p>
- * Uso principal:
- * <ul>
- *   <li>Multiplicar una fila de una matriz cuadrada por un escalar.</li>
- *   <li>Comparar el determinante de la matriz original y la modificada.</li>
- *   <li>Verificar el cumplimiento del teorema 3.5.</li>
- * </ul>
- * </p>
  * 
  * @author Miguel Angel
  * @see Teoremas
@@ -28,15 +21,51 @@ public class Teorema35 extends Teoremas {
 
     /**
      * Constructor para inicializar el teorema 3.5
-     *
-     * @param matriz  matriz cuadrada
-     * @param fila    número de fila a multiplicar (0 = primera fila)
-     * @param escalar número por el que se multiplica la fila
+     * @param matriz matriz cuadrada
      */
-    public Teorema35(int[][] matriz, int fila, int escalar) {
+    public Teorema35(int[][] matriz) {
         super(matriz); // Llama al constructor de la clase padre
-        this.fila = fila;
-        this.escalar = escalar;
+        solicitarFila();
+        solicitarEscalar();
+    }
+
+    /**
+     * Solicita al usuario que ingrese la fila a multiplicar
+     */
+    private void solicitarFila() {
+        Scanner sc = new Scanner(System.in);
+        int n = matriz.length;
+        while (true) {
+            try {
+                System.out.print("Ingrese la fila a multiplicar (1 a " + n + "): ");
+                fila = sc.nextInt() - 1; // convertir a índice 0-based
+                if (fila < 0 || fila >= n) {
+                    System.out.println("Error: La fila debe estar entre 1 y " + n + ".");
+                    continue;
+                }
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Debe ingresar un número entero.");
+                sc.next(); // limpiar buffer
+            }
+        }
+    }
+
+    /**
+     * Solicita al usuario que ingrese un escalar válido
+     */
+    private void solicitarEscalar() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.print("Ingrese el escalar para multiplicar la fila " + (fila + 1) + ": ");
+                escalar = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Debe ingresar un número entero.");
+                sc.next(); // limpiar buffer
+            }
+        }
     }
 
     @Override
