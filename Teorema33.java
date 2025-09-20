@@ -1,34 +1,34 @@
 import java.util.Scanner;
-
 /**
- * La clase Teorema33 implementa el Teorema 3.3 de álgebra lineal, el cual establece que
- * si una matriz tiene dos filas idénticas, su determinante es igual a 0.
- * 
- * Hereda de la clase Teoremas y proporciona una implementación del método aplicar()
- * que verifica si la matriz contiene filas idénticas y calcula el determinante en caso contrario.
- * 
- * Métodos principales:
- * - aplicar(): Interactúa con el usuario, explica el teorema y verifica si la matriz cumple la condición.
- * - verificarFilas(int[][] matriz): Método estático que determina si existen dos filas idénticas en la matriz.
- * 
- * Uso:
- * Crear una instancia de Teorema33 pasando una matriz cuadrada de enteros y llamar al método aplicar().
+ * <p>Teorema 3.3 - Algebra lineal</p>
+ * Se representa de forma interactiva, este teorema establece que el determinante de una matriz cuadrada (nxn)
+ * tiene dos filas idénticas, entonces su determinante es igual a cero.
+ *
+ * <p>La clase extiende {@link Teoremas} y utiliza métodos de la clase {@link Tools}
+ * para calcular determinantes. Incluye un método auxiliar para verificar si existen
+ * filas repetidas dentro de la matriz y asi comprobar el teorema.</p>
+ *
  * @author Sara
  */
-
 public class Teorema33 extends Teoremas{
-
+    Scanner sc = new Scanner(System.in);
+    /**
+     * Crea una nueva instancia del teorema 3.3 con la matriz dada.
+     *
+     * @param matriz matriz cuadrada (nxn) en la cual se aplicará el teorema
+     */
     public Teorema33(int[][] matriz) {
         super(matriz);
     }
-    Scanner sc = new Scanner(System.in);
-
     /**
-    * El método aplicar() interactúa con el usuario, explica el teorema y verifica si la matriz contiene filas idénticas.
-    * Si existen dos filas iguales, muestra que el determinante es 0 según el Teorema 3.3.
-    * En caso contrario, calcula y muestra el determinante real de la matriz.
-    */
-
+     * <p>El procedimiento de la demostracion consiste en:</p>
+     * <ol>
+     *  <li>Explicar el enunciado del teorema.</li>
+     *  <li>Verificar si la matriz contiene dos filas idénticas.</li>
+     *  <li>Si existen filas idénticas, mostrar que el determinante es cero.</li>
+     *  <li>Si no existen, calcular y mostrar el determinante real de la matriz.</li>
+     * </ol>
+     */
     @Override
     public void aplicar() {
         System.out.println("Bienvenido al Teorema 3.3!");
@@ -45,7 +45,7 @@ public class Teorema33 extends Teoremas{
         }
     }
 
-
+    // Metodo interno (verificacion de filas)
     /**
      * Verifica si la matriz tiene dos filas idénticas.
      *
@@ -56,7 +56,6 @@ public class Teorema33 extends Teoremas{
         int n = matriz.length;
 
         // Comparar cada fila i con cada fila j (donde j > i)
-        // Nos permite hacer una interaccion directa al recorrerlo y asi determinar si hay alguna igual
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 boolean igual = true;
@@ -64,7 +63,7 @@ public class Teorema33 extends Teoremas{
                 // Compara cada uno
                 for (int k = 0; k < n; k++) {
                     if (matriz[i][k] != matriz[j][k]) {
-                        igual = false; // Si uno es distinto, ya no son iguales y tendra determinante != 0
+                        igual = false; // Si al comparar son distintos, ya no son iguales y tendra determinante != 0
                         break;
                     }
                 }
