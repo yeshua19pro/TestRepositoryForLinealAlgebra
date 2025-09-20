@@ -1,36 +1,32 @@
-
+import java.util.Scanner;
 /**
- * Clase que demuestra el Teorema 3.4.
- * Teorema 3.4: Si una matriz tiene una fila o una columna de ceros,
- * su determinante es igual a 0.
+ * <p>Teorema 3.4 - Algebra lineal</p>.
+ * Se representa de forma interactiva, este teorema establece que el determinante de una matriz cuadrada (nxn)
+ * tiene una fila o una columna de ceros, su determinante es igual a 0.
  * 
- * Extiende la clase {@link Teoremas}.
+ * <p>La clase extiende {@link Teoremas} y utiliza métodos de la clase {@link Tools}
+ *  para mostrar matrices y calcular determinantes.
+ *
  * Autor: Nancy
  */
-import java.util.Scanner;
 public class Teorema34 extends Teoremas {
-
     /**
-     * Constructor de la clase Teorema34.
-     * Inicializa la matriz que se evaluará según el teorema.
+     * <p>Constructor de la clase Teorema34.</p>
+     * Crea una nueva instancia del teorema 3.3 con la matriz dada.
      *
-     * @param matriz Matriz cuadrada que se usará para la demostración.
+     * @param matriz Matriz cuadrada (nxn) en la cual se aplicará el teorema.
      */
     public Teorema34(int[][] matriz) {
         super(matriz);
     }
-
     /**
-     * Aplica el Teorema 3.4 a la matriz.
-     * <p>
-     * Este método realiza los siguientes pasos:
+     * <p>El procedimiento de la demostracion consiste en:</p>
      * <ul>
      *   <li>Muestra la matriz al usuario.</li>
      *   <li>Verifica si alguna fila o columna contiene únicamente ceros.</li>
      *   <li>Calcula el determinante usando {@link Tools#determinante(int[][])}.</li>
      *   <li>Muestra por consola si se cumple o no el Teorema 3.4.</li>
      * </ul>
-     * </p>
      */
     @Override
     public void aplicar() {
