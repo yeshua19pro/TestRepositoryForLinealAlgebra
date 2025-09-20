@@ -1,9 +1,0 @@
-Cree un programa que realice lo siguiente: El determinante de una matriz NxN, la matriz inversa, la matriz transpuesta y la matriz adjunta. 
-
-Adicional a eso desarrollar el algoritmo para demostrar los siguientes teoremas:
-- TEOREMA 3.1 Los determinantes de una matriz y de su transpuesta son iguales; es decir, det(AT) = det(A).
-- TEOREMA 3.2 Si la matriz B se obtiene intercambiando dos filas o intercambiando dos columnas de A entonces det(B) = −det(A).
-- TEOREMA 3.3 Si dos filas (columnas) de A son iguales, entonces det(A) = 0.
-- TEOREMA 3.4 Si una fila (columna) de A consta sólo de ceros, entonces det(A) = 0.
-TEOREMA 3.5 Si B se obtiene a partir de A multiplicando una fila (columna) de A por un número real c, entonces det(B) = c det(A).|
-TEOREMA 3.7 Si una matriz A = [aij] es triangular superior (inferior) (vea el ejercicio T.5, sección1.2), entoncesdet(A) = a11a22 · · · amn; es decir, el determinante de una matriz triangular es el producto de los elementos de ladiagonal principal.
