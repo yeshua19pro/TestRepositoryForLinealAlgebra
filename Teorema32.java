@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+/**
+ * Clase que demuestra el Teorema 3.2.
+ * Teorema 3.2: Si se intercambian dos filas o dos columnas de una matriz nxn,
+ * el determinante de la nueva matriz obtenida es igual al determinante de la
+ * anterior matriz pero con el signo invertido.
+ *
+ * @author Sunny
+ */
 public class Teorema32 extends Teoremas {
     public int[][] interF(int[][] matriz, int f1, int f2) {
         for (int j = 0; j < n; j++) {
@@ -27,6 +35,21 @@ public class Teorema32 extends Teoremas {
     int col1 = 0;
     int col2 = 0;
     int det = Tools.determinante(matriz);
+
+    /**
+     * Este método guía al usuario a través de los siguientes pasos:
+     * <ul>
+     *   <li>Verifica que la matriz sea al menos de tamaño 2x2 y que su determinante no sea cero.</li>
+     *   <li>Muestra la matriz original y su determinante.</li>
+     *   <li>Permite al usuario elegir si desea intercambiar filas o columnas, y seleccionar cuáles intercambiar.</li>
+     *   <li>Realiza el intercambio seleccionado y muestra la matriz modificada.</li>
+     *   <li>Calcula y muestra el determinante de la matriz modificada.</li>
+     *   <li>Demuestra que el determinante de la matriz modificada es el opuesto del original, cumpliendo el teorema.</li>
+     * </ul>
+     * 
+     * Se utiliza la consola para la interacción con el usuario.
+     */
+
     @Override
     public void aplicar() {
         System.out.println("Bienvenido al Teorema 3.2!");
