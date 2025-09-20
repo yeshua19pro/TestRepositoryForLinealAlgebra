@@ -2,11 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * La clase {@code Teorema35} implementa el teorema 3.5 de determinantes,
+ * La clase Teorema35 implementa el teorema 3.5 de determinantes,
  * que establece que si se multiplica una fila de una matriz cuadrada por un escalar,
  * el determinante de la nueva matriz es igual al determinante original multiplicado por ese escalar.
  * 
- * Esta clase extiende la clase {@code Teoremas} y permite aplicar la operación sobre una fila específica
+ * Esta clase extiende la clase Teoremas y permite aplicar la operación sobre una fila específica
  * de una matriz cuadrada, mostrando la matriz original, la matriz modificada, ambos determinantes
  * y verificando si se cumple el teorema.
  * 
@@ -70,6 +70,11 @@ public class Teorema35 extends Teoremas {
             }
         }
     }
+
+    /**
+     * Aplica el teorema 3.5 multiplicando la fila especificada por el escalar
+     * y mostrando los resultados.
+     */
 
     @Override
     public void aplicar() {

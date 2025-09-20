@@ -21,6 +21,22 @@ public class Teorema31 extends Teoremas {
         super(matriz);
     }
 
+    /**
+     * Aplica el Teorema 3.1, que establece que el determinante de una matriz cuadrada es igual al determinante de su transpuesta.
+     * 
+     * El método realiza los siguientes pasos:
+     * <ul>
+     *   <li>Muestra un mensaje de bienvenida y explica el teorema.</li>
+     *   <li>Muestra la matriz original proporcionada por el usuario.</li>
+     *   <li>Calcula y muestra el determinante de la matriz original.</li>
+     *   <li>Muestra la transpuesta de la matriz.</li>
+     *   <li>Calcula y muestra el determinante de la transpuesta.</li>
+     *   <li>Confirma que ambos determinantes son iguales, validando el teorema.</li>
+     * </ul>
+     * 
+     * Se utiliza la clase {@code Tools} para mostrar matrices, calcular determinantes y obtener la transpuesta.
+     * Se emplea la consola para interactuar con el usuario y pausar la ejecución entre pasos.
+     */
     @Override
     public void aplicar() {
         System.out.println("Bienvenido al Teorema 3.1!");

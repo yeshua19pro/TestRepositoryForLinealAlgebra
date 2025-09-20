@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author nancy
- */
 /**
  * Clase que demuestra el Teorema 3.4. 
  * Teorema 3.4: Si una matriz tiene o una fila o una columna de ceros, 
  * su determinante es = 0.
+ * @author nancy
  */
+
 import java.util.Scanner;
 
 public class Teorema34 extends Teoremas {   
