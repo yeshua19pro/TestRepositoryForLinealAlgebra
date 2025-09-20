@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public class Teorema35 extends Teoremas {
 
+    Scanner sc = new Scanner(System.in);
     private int fila;
     private int escalar;
 
@@ -35,6 +36,8 @@ public class Teorema35 extends Teoremas {
     private void solicitarFila() {
         Scanner sc = new Scanner(System.in);
         int n = matriz.length;
+        System.out.println("Bienvenido al Teorema 3.5!");
+        System.out.println("El Teorema 3.5 establece que si se multiplica una fila o columna de una matriz cuadrada por un numero real , el determinante de la nueva matriz sera igual al determinante original multiplicaada por el mismo numero real.");
         while (true) {
             try {
                 System.out.print("Ingrese la fila a multiplicar (1 a " + n + "): ");
@@ -88,9 +91,13 @@ public class Teorema35 extends Teoremas {
         // Mostrar resultados
         System.out.println("Matriz original:");
         Tools.mostrarMatriz(matriz);
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         System.out.println("\nMatriz con la fila " + (fila + 1) + " multiplicada por " + escalar + ":");
         Tools.mostrarMatriz(copia);
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         // Determinantes
         int detOriginal = Tools.determinante(matriz);

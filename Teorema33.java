@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * La clase Teorema33 implementa el Teorema 3.3 de álgebra lineal, que establece que
  * si una matriz cuadrada tiene dos filas idénticas, entonces su determinante es cero.
@@ -14,18 +15,24 @@
  * Uso típico:
  * Crear una instancia de Teorema33 pasando una matriz cuadrada y llamar al método aplicar().
  */
+=======
+import java.util.Scanner;
+
+>>>>>>> e126ae532185e6f31af774b5bb7a57d294b32584
 public class Teorema33 extends Teoremas{
 
     public Teorema33(int[][] matriz) {
         super(matriz);
     }
+    Scanner sc = new Scanner(System.in);
 
     @Override
     public void aplicar() {
-        System.out.println("Se ha generado correctamente la matriz:)");
-        Tools.mostrarMatriz(matriz);
-
+        System.out.println("Bienvenido al Teorema 3.3!");
+        System.out.println("El Teorema 3.3 propone que si una matriz tiene dos filas iguales, su determinante es 0 \n(enter para continuar)");
         System.out.println("Ahora verificaremos si tiene dos filas identicas");
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
         if (verificarFilas(matriz)) {
             System.out.println("Determinante = 0 (Teorema 3.3 si se cumple. La matriz tiene dos filas iguales)");
         } else {
