@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Durante la ejecución del codigo, se guía al usuario paso a paso mediante un menu para comprobar el enunciado
  * del teorema.</p>
  *
- * @author Sunny
+ * @author Sophia
  */
 public class Teorema31 extends Teoremas {
     Scanner sc = new Scanner(System.in);

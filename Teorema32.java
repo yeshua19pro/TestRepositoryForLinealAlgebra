@@ -10,7 +10,7 @@ import java.util.Scanner;
  * al usuario elegir filas o columnas a intercambiar y se comprueba el enunciado
  * del teorema mediante la comparación de determinantes. Ademas se guia al usuario con un menu.</p>
  *
- * @author Sunny
+ * @author Sophia
  */
 public class Teorema32 extends Teoremas {
     Scanner sc = new Scanner(System.in);

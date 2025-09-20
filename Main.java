@@ -1,36 +1,29 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
+/**
+ * Clase principal del programa.
+ * <p>
+ * Permite ingresar una matriz cuadrada, mostrar propiedades
+ * como determinante, transpuesta y adjunta, y aplicar distintos
+ * teoremas de determinantes a través de un menú interactivo.
+ * /p>
+ *
+ * @author Sophia, Miguel Angel, Nancy, Sara.
+ */
 public class Main {
-
-    public static int[][] ingresarMatriz(int[][] matriz) {
-        Scanner sc = new Scanner(System.in);
-        int n = matriz.length;
-        do {
-            System.out.println("Por favor, ingresa el tamaño de la matriz cuadrada nxn (Max 4, min 1):");
-            n = sc.nextInt();
-        }while (n < 1 || n > 4);
-        matriz = new int[n][n];
-        sc.nextLine();
-        System.out.println("Ingresa los elementos de la matriz fila por fila");
-        System.out.println("Porfavor ten en cuenta que las matrices inician en 0 y no en 1");
-        System.out.println("[x][y], donde x es la fila y y es la columna. Por ejemplo, [0][0] es el primer elemento de la matriz.");
-        System.out.println("Teniendo esto en cuenta ya podemos empezar ");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                while (true) {
-                    try {
-                        System.out.print("Elemento [" + i + "][" + j + "]: ");
-                        matriz[i][j] = sc.nextInt();
-                        break;
-                    } catch (InputMismatchException e) {
-                        System.out.println("Error: Debes ingresar un número entero. Intenta de nuevo.");
-                        sc.nextLine();
-                    }
-                }
-            }
-        }
-        return matriz;
-    }
+    /**
+     * Metodo principal que ejecuta el programa.
+     * <p>
+     * Hay un menu que permite al usuario:
+     * <ol>
+     *     <li>Ingresar una matriz cuadrada.</li>
+     *     <li>Visualizar determinante, transpuesta y adjunta.</li>
+     *     <li>Aplicar diferentes teoremas de determinantes.</li>
+     *     <li>Cambiar la matriz o salir del programa.</li>
+     * </ul> </p>
+     *
+     * @param args argumentos de linea
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String op = "0";
@@ -113,4 +106,40 @@ public class Main {
         }while(op.equals("1") || op.equals("7"));
     }
     
+    /**
+     * Permite al usuario ingresar una matriz cuadrada por teclado, validando
+     * que el tamaño esté entre 1 y 4 y que los elementos sean números enteros.
+     *
+     * @param matriz Matriz inicial
+     * @return matriz cuadrada (nxn) ingresada por el usuario.
+     */
+    public static int[][] ingresarMatriz(int[][] matriz) {
+        Scanner sc = new Scanner(System.in);
+        int n = matriz.length;
+        do {
+            System.out.println("Por favor, ingresa el tamaño de la matriz cuadrada nxn (Max 4, min 1):");
+            n = sc.nextInt();
+        }while (n < 1 || n > 4);
+        matriz = new int[n][n];
+        sc.nextLine();
+        System.out.println("Ingresa los elementos de la matriz fila por fila");
+        System.out.println("Porfavor ten en cuenta que las matrices inician en 0 y no en 1");
+        System.out.println("[x][y], donde x es la fila y y es la columna. Por ejemplo, [0][0] es el primer elemento de la matriz.");
+        System.out.println("Teniendo esto en cuenta ya podemos empezar ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                while (true) {
+                    try {
+                        System.out.print("Elemento [" + i + "][" + j + "]: ");
+                        matriz[i][j] = sc.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Error: Debes ingresar un número entero. Intenta de nuevo.");
+                        sc.nextLine();
+                    }
+                }
+            }
+        }
+        return matriz;
+    }
 }
