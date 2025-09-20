@@ -1,25 +1,37 @@
 /**
- * Clase que demuestra el Teorema 3.4. 
- * Teorema 3.4: Si una matriz tiene o una fila o una columna de ceros, 
- * su determinante es = 0.
- * @author nancy
+ * Clase que demuestra el Teorema 3.4.
+ * Teorema 3.4: Si una matriz tiene una fila o una columna de ceros,
+ * su determinante es igual a 0.
+ * 
+ * Extiende la clase {@link Teoremas}.
+ * Autor: Nancy
  */
-
 import java.util.Scanner;
 
-public class Teorema34 extends Teoremas {   
+public class Teorema34 extends Teoremas {
+
+    /**
+     * Constructor de la clase Teorema34.
+     * Inicializa la matriz que se evaluará según el teorema.
+     *
+     * @param matriz Matriz cuadrada que se usará para la demostración.
+     */
     public Teorema34(int[][] matriz) {
         super(matriz);
     }
 
     /**
-     * Metodo principal que crea una matriz cuadrada del tamaño que desea el usuario 
-     * dejando la segunda columna llena de ceros para cumplir con las condiciones que 
-     * requiere el teorema, verifica que las condiciones para el teorema, y calcula la 
-     * determinante de la matriz.
-     * @param args 
+     * Aplica el Teorema 3.4 a la matriz.
+     * <p>
+     * Este método realiza los siguientes pasos:
+     * <ul>
+     *   <li>Muestra la matriz al usuario.</li>
+     *   <li>Verifica si alguna fila o columna contiene únicamente ceros.</li>
+     *   <li>Calcula el determinante usando {@link Tools#determinante(int[][])}.</li>
+     *   <li>Muestra por consola si se cumple o no el Teorema 3.4.</li>
+     * </ul>
+     * </p>
      */
-    
     @Override
     public void aplicar() {
         int n = matriz.length;
@@ -31,7 +43,6 @@ public class Teorema34 extends Teoremas {
         System.out.println("(Presiona Enter para continuar)");
         sc.nextLine();
 
-        //Checar si la matriz tiene columna de ceros
         boolean tieneColumnaCeros = false;
         for (int j = 0; j < n; j++) {
             boolean columnaCeros = true;
@@ -47,7 +58,6 @@ public class Teorema34 extends Teoremas {
             }
         }
 
-        //Checar si la matriz tiene fila de ceros
         boolean tieneFilaCeros = false;
         for (int i = 0; i < n; i++) {
             boolean filaCeros = true;
@@ -63,19 +73,18 @@ public class Teorema34 extends Teoremas {
             }
         }
 
-        //calcula el determinante usando clase externa llamada Determinante
         int det = Tools.determinante(matriz);
         System.out.println("Determinante de la matriz: " + det);
         System.out.println("Ahora verificaremos si hay una fila o columna de ceros en la matriz...");
         System.out.println("(Presiona Enter para continuar)");
         sc.nextLine();
-        //Evalua el Teorema 3.4
+
         if ((tieneFilaCeros || tieneColumnaCeros) && det == 0) {
             System.out.println("Se cumple el Teorema 3.4: Determinante = 0 al presentarse una fila o columna de ceros");
         } else if ((tieneFilaCeros || tieneColumnaCeros) && det != 0) {
             System.out.println("El Teorema 3.4 no se cumple");
         } else {
-            System.out.println("El determinante es distante de cero y no hay fila o columna de ceros");
+            System.out.println("El determinante es distinto de cero y no hay fila o columna de ceros");
             System.out.println("Por lo tanto no se cumple el Teorema 3.4");
         }
     }
