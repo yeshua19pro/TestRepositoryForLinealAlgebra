@@ -1,11 +1,42 @@
 import java.util.Scanner;
 
+/**
+ * La clase {@code Teorema31} implementa la demostración interactiva del Teorema 3.1 de álgebra lineal,
+ * el cual establece que el determinante de una matriz cuadrada es igual al determinante de su transpuesta.
+ * 
+ * <p>Esta clase extiende la clase {@code Teoremas} y utiliza métodos auxiliares de la clase {@code Tools}
+ * para mostrar matrices, calcular determinantes y obtener la transpuesta de una matriz.
+ * 
+ * <p>Durante la ejecución del método {@code aplicar()}, se guía al usuario paso a paso a través de la visualización
+ * de la matriz original, el cálculo de su determinante, la obtención de la transpuesta y el cálculo del determinante
+ * de la transpuesta, comprobando así el enunciado del teorema.
+ * 
+ * <p>Se utiliza {@code Scanner} para pausar la ejecución y permitir la interacción del usuario en cada paso.
+ * 
+ * @author Sunny
+ */
 public class Teorema31 extends Teoremas {
     Scanner sc = new Scanner(System.in);
     public Teorema31(int[][] matriz) {
         super(matriz);
     }
 
+    /**
+     * Aplica el Teorema 3.1, que establece que el determinante de una matriz cuadrada es igual al determinante de su transpuesta.
+     * 
+     * El método realiza los siguientes pasos:
+     * <ul>
+     *   <li>Muestra un mensaje de bienvenida y explica el teorema.</li>
+     *   <li>Muestra la matriz original proporcionada por el usuario.</li>
+     *   <li>Calcula y muestra el determinante de la matriz original.</li>
+     *   <li>Muestra la transpuesta de la matriz.</li>
+     *   <li>Calcula y muestra el determinante de la transpuesta.</li>
+     *   <li>Confirma que ambos determinantes son iguales, validando el teorema.</li>
+     * </ul>
+     * 
+     * Se utiliza la clase {@code Tools} para mostrar matrices, calcular determinantes y obtener la transpuesta.
+     * Se emplea la consola para interactuar con el usuario y pausar la ejecución entre pasos.
+     */
     @Override
     public void aplicar() {
         System.out.println("Bienvenido al Teorema 3.1!");

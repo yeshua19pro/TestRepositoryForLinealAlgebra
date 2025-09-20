@@ -2,11 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * La clase {@code Teorema35} implementa el teorema 3.5 de determinantes,
+ * La clase Teorema35 implementa el teorema 3.5 de determinantes,
  * que establece que si se multiplica una fila de una matriz cuadrada por un escalar,
  * el determinante de la nueva matriz es igual al determinante original multiplicado por ese escalar.
  * 
- * Esta clase extiende la clase {@code Teoremas} y permite aplicar la operación sobre una fila específica
+ * Esta clase extiende la clase Teoremas y permite aplicar la operación sobre una fila específica
  * de una matriz cuadrada, mostrando la matriz original, la matriz modificada, ambos determinantes
  * y verificando si se cumple el teorema.
  * 
@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public class Teorema35 extends Teoremas {
 
+    Scanner sc = new Scanner(System.in);
     private int fila;
     private int escalar;
 
@@ -23,6 +24,7 @@ public class Teorema35 extends Teoremas {
      * Constructor para inicializar el teorema 3.5
      * @param matriz matriz cuadrada
      */
+
     public Teorema35(int[][] matriz) {
         super(matriz); // Llama al constructor de la clase padre
         solicitarFila();
@@ -32,9 +34,12 @@ public class Teorema35 extends Teoremas {
     /**
      * Solicita al usuario que ingrese la fila a multiplicar
      */
+
     private void solicitarFila() {
         Scanner sc = new Scanner(System.in);
         int n = matriz.length;
+        System.out.println("Bienvenido al Teorema 3.5!");
+        System.out.println("El Teorema 3.5 establece que si se multiplica una fila o columna de una matriz cuadrada por un numero real , el determinante de la nueva matriz sera igual al determinante original multiplicaada por el mismo numero real.");
         while (true) {
             try {
                 System.out.print("Ingrese la fila a multiplicar (1 a " + n + "): ");
@@ -54,6 +59,7 @@ public class Teorema35 extends Teoremas {
     /**
      * Solicita al usuario que ingrese un escalar válido
      */
+    
     private void solicitarEscalar() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -67,6 +73,11 @@ public class Teorema35 extends Teoremas {
             }
         }
     }
+
+    /**
+     * Aplica el teorema 3.5 multiplicando la fila especificada por el escalar
+     * y mostrando los resultados.
+     */
 
     @Override
     public void aplicar() {
@@ -88,9 +99,13 @@ public class Teorema35 extends Teoremas {
         // Mostrar resultados
         System.out.println("Matriz original:");
         Tools.mostrarMatriz(matriz);
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         System.out.println("\nMatriz con la fila " + (fila + 1) + " multiplicada por " + escalar + ":");
         Tools.mostrarMatriz(copia);
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         // Determinantes
         int detOriginal = Tools.determinante(matriz);

@@ -15,6 +15,7 @@ public class Teorema37 extends Teoremas {
     public Teorema37(int[][] matriz) {
         super(matriz);
     }
+    Scanner sc = new Scanner(System.in);
 
     /**
      * Aplica la comprobación del Teorema 3.7 sobre la matriz proporcionada
@@ -72,16 +73,20 @@ public class Teorema37 extends Teoremas {
         } else {
             System.out.println("La matriz NO es triangular (ni superior ni inferior).");
         }
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         System.out.println("Producto de la diagonal principal: " + productoDiagonal);
-        System.out.println("Determinante (calculado por Tools.determinante): " + det);
+        System.out.println("Determinante : " + det);
+        System.out.println("(Presiona Enter para continuar)");
+        sc.nextLine();
 
         // Verificación del teorema (solo tiene sentido comprobar igualdad si es triangular)
         if (triangularSuperior || triangularInferior) {
             if (productoDiagonal == det) {
-                System.out.println("✅ Se cumple el Teorema 3.7: el determinante es igual al producto de la diagonal principal.");
+                System.out.println("Se cumple el Teorema 3.7: el determinante es igual al producto de la diagonal principal.");
             } else {
-                System.out.println("❌ No coincide el producto diagonal con el determinante. Revisa el cálculo o la matriz.");
+                System.out.println("No coincide el producto diagonal con el determinante. Revisa el cálculo o la matriz.");
             }
         } else {
             System.out.println("Nota: El Teorema 3.7 se aplica a matrices triangulares. Aquí solo mostramos el producto diagonal y el determinante para comparación.");

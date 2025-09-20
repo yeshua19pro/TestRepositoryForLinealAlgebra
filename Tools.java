@@ -1,10 +1,18 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+
 /**
- * La clase Tools contiene métodos matemáticos útiles 
+ * La clase Tools contiene métodos matemáticos útiles
  * para trabajar con matrices cuadradas en Java.
- * 
+ * <p>
  * Incluye un métodos para calcular funciones y propiedades de las matrices
  *
- * 
  * @author Miguel Angel, Sophia Narvaez
  */
 public class Tools {
@@ -12,11 +20,10 @@ public class Tools {
     /**
      * Calcula el determinante de una matriz cuadrada de forma recursiva,
      * utilizando el método de cofactores (expansión por la primera fila).
-     * 
+     *
      * @param A matriz cuadrada de enteros (int[][]).
-     *           Debe ser de tamaño n x n.
+     *          Debe ser de tamaño n x n.
      * @return el valor entero del determinante de la matriz.
-     * 
      */
     public static int determinante(int[][] A) {
         int n = A.length;
@@ -27,12 +34,12 @@ public class Tools {
         // Recorremos cada elemento de la primera fila
         for (int j = 0; j < n; j++) {
             // Construcción de la submatriz
-            int[][] sub = new int[n-1][n-1];
+            int[][] sub = new int[n - 1][n - 1];
             for (int i = 1; i < n; i++) {
                 int colSub = 0;
                 for (int k = 0; k < n; k++) {
                     if (k == j) continue; // Saltamos la columna j
-                    sub[i-1][colSub++] = A[i][k];
+                    sub[i - 1][colSub++] = A[i][k];
                 }
             }
             // Calculamos el signo (+ o -) según la posición
@@ -45,13 +52,12 @@ public class Tools {
 
     /**
      * Imprime la diagonal transversal (o secundaria) de una matriz cuadrada.
-     * 
-     * La diagonal transversal va desde la esquina superior derecha 
+     * <p>
+     * La diagonal transversal va desde la esquina superior derecha
      * hasta la esquina inferior izquierda.
-     * 
+     *
      * @param matriz matriz cuadrada de enteros (int[][]).
      *               Debe ser de tamaño n x n.
-     * 
      */
     public static void Transversal(int[][] matriz) {
         int n = matriz.length;
@@ -63,6 +69,7 @@ public class Tools {
 
     /**
      * Muestra una matriz en formato de tabla.
+     *
      * @param matriz matriz cuadrada
      */
     public static void mostrarMatriz(int[][] matriz) {
@@ -74,6 +81,7 @@ public class Tools {
             System.out.println();
         }
     }
+
     /**
      * Calcula la transpuesta de una matriz cuadrada.
      * La transpuesta se obtiene intercambiando filas por columnas.
@@ -93,4 +101,68 @@ public class Tools {
         return At;
     }
 
+    /**
+     * Calcula una submatriz eliminando una fila y columna
+     *
+     * @param matriz  matriz original
+     * @param fila    fila que se elimina
+     * @param columna columna que se elimina
+     * @return la submatriz int [][]
+     */
+
+    //Submatriz de un elemento en fila i columna j
+    public static int[][] subMatriz(int[][] matriz, int fila, int columna) {
+        int n = matriz.length;
+        int[][] matrizMenor = new int[n - 1][n - 1];
+        int filaSubmatriz = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (i == fila) continue;
+            int columnaSubmatriz = 0;
+            for (int j = 0; j < n; j++) {
+                if (j == columna) continue;
+                matrizMenor[filaSubmatriz][columnaSubmatriz++] = matriz[i][j];
+            }
+            filaSubmatriz++;
+        }
+        return matrizMenor;
+    }
+
+    /**
+     * Calcula la matriz de cofactores
+     *
+     * @param matriz matriz original
+     * @return matriz de cofactores int[][]
+     */
+
+    //Matriz cofactores
+    public static int[][] cofactores(int[][] matriz) {
+        int n = matriz.length;
+        int[][] cofactores = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int[][] matrizMenor = subMatriz(matriz, i, j);
+
+                //aqui se usa metodo determinante de Tools
+                int signo = (i + j) % 2 == 0 ? 1 : -1;
+                cofactores[i][j] = signo * Tools.determinante(matrizMenor);
+            }
+        }
+        return cofactores;
+    }
+
+    /**
+     * Calcula la matriz adjunta (transpuesta de la matriz cofactores)
+     *
+     * @param matriz matriz original
+     * @return matriz adjunta int[][]
+     */
+
+    // calcula matriz adjunta (transpuesta de la matriz de cofactores)
+    public static int[][] adjunta(int[][] matriz) {
+        //aqui se usa metodo transpuesta de Tools
+        return Tools.transpuesta(cofactores(matriz));
+
+    }
 }
