@@ -88,64 +88,6 @@ public class Teorema37 extends Teoremas {
         }
     }
 
-    /**
-     * Método main para pruebas rápidas.
-     * Permite crear una matriz triangular de ejemplo o introducir una matriz manualmente.
-     */
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Teorema 3.7 - Determinante de matriz triangular = producto de la diagonal");
-        System.out.print("Ingresa el tamaño n de la matriz cuadrada (ej: 3): ");
-        int n = sc.nextInt();
-
-        int[][] matriz = new int[n][n];
-
-        System.out.println("¿Deseas usar una matriz triangular de ejemplo? (s/n)");
-        String opcion = sc.next().trim().toLowerCase();
-        sc.nextLine(); // limpiar buffer
-
-        if (opcion.equals("s") || opcion.equals("si")) {
-            // Pedir si triangular superior o inferior
-            System.out.print("Triangular superior o inferior? (s/i): ");
-            String tipo = sc.next().trim().toLowerCase();
-            if (tipo.equals("s") || tipo.equals("sup") || tipo.equals("superior")) {
-                // Ejemplo: triangular superior
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
-                        if (i <= j) {
-                            matriz[i][j] = (i + 1) * (j + 2); // ejemplo no nulo en/por encima diagonal
-                        } else {
-                            matriz[i][j] = 0;
-                        }
-                    }
-                }
-            } else {
-                // Ejemplo: triangular inferior
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
-                        if (i >= j) {
-                            matriz[i][j] = (i + 1) * (j + 2);
-                        } else {
-                            matriz[i][j] = 0;
-                        }
-                    }
-                }
-            }
-        } else {
-            // Entrada manual de la matriz
-            System.out.println("Introduce los elementos fila por fila (enter para separar):");
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    System.out.print("Elemento [" + i + "][" + j + "]: ");
-                    matriz[i][j] = sc.nextInt();
-                }
-            }
-        }
-
-        sc.close();
-
-        // Crear objeto Teorema37 y aplicar la verificación
-        Teorema37 t37 = new Teorema37(matriz);
-        t37.aplicar();
+    
     }
-}
+
