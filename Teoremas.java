@@ -8,7 +8,7 @@
  */
 public abstract class Teoremas {
 
-    protected int[][] matriz;
+    protected static int[][] matriz;
 
     /**
      * Constructor para inicializar la matriz.
