@@ -1,11 +1,11 @@
 import java.util.Scanner;
 /**
- * <p>Teorema 3.4 - Algebra lineal</p>.
+ * <p>Teorema 3.4 - Algebra lineal.</p>
  * Se representa de forma interactiva, este teorema establece que el determinante de una matriz cuadrada (nxn)
- * tiene una fila o una columna de ceros, su determinante es igual a 0.
+ * tiene una fila o una columna de ceros, su determinante es igual a cero.
  * 
  * <p>La clase extiende {@link Teoremas} y utiliza métodos de la clase {@link Tools}
- *  para mostrar matrices y calcular determinantes.
+ *  para mostrar matrices y calcular determinantes.</p>
  *
  * Autor: Nancy
  */
@@ -19,9 +19,10 @@ public class Teorema34 extends Teoremas {
     public Teorema34(int[][] matriz) {
         super(matriz);
     }
+
     /**
      * <p>El procedimiento de la demostracion consiste en:</p>
-     * <ul>
+     * <ol>
      *   <li>Muestra la matriz al usuario.</li>
      *   <li>Verifica si alguna fila o columna contiene únicamente ceros.</li>
      *   <li>Calcula el determinante usando {@link Tools#determinante(int[][])}.</li>

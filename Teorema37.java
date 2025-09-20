@@ -5,10 +5,12 @@ import java.util.Scanner;
  * (superior o inferior) es igual al producto de los elementos de su diagonal principal. Además, guía al usuario
  * mostrando la matriz, el producto de la diagonal y el determinante calculado.</p>
  *
- * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools}para mostrar
+ * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools} para mostrar
  * matrices y calcular determinantes. Se incluyen verificaciones para determinar si la matriz es
  * triangular superior, triangular inferior o ninguna de las dos, y se compara el producto de
  * la diagonal con el determinante obtenido.</p>
+ *
+ * @author Miguel Angel
  */
 public class Teorema37 extends Teoremas {
     Scanner sc = new Scanner(System.in);
@@ -21,6 +23,7 @@ public class Teorema37 extends Teoremas {
     public Teorema37(int[][] matriz) {
         super(matriz);
     }
+
     /**
      * <p>El procedimiento de la demostración consiste en:</p>
      * <ol>

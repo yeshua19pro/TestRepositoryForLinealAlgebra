@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
  * <p>Teorema 3.2 - Algebra lineal</p>
- * Se representa de forma interactiva, este teorema establece que al intercambiar dos filas o
- * dos columnas de una matriz cuadrada, el determinante de la nueva matriz es el opuesto del
- * determinante original.
+ * Se representa de forma interactiva, este teorema establece que el determinante de una matriz cuadrada (nxn)
+ * al intercambiar dos filas o dos columnas de una matriz cuadrada, el determinante de la nueva matriz es
+ * el opuesto del determinante original.
  *
  * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools}
  * para mostrar matrices y calcular determinantes. Durante la ejecución, se solicita
@@ -21,13 +21,15 @@ public class Teorema32 extends Teoremas {
     int col2 = 0;
     int det = Tools.determinante(matriz);
     /**
+     * <p>Constructor de la clase Teorema32.</p>
      * Crea una nueva instancia del teorema 3.2 con la matriz dada.
      *
-     * @param matriz matriz cuadrada (nxn) en la cual se aplicará el teorema
+     * @param matriz Matriz cuadrada (nxn) en la cual se aplicará el teorema.
      */
     public Teorema32(int[][] matriz) {
         super(matriz);
     }
+
     /**
      * <p>El procedimiento de la demostracion consiste en:</p>
      * <ol>

@@ -5,7 +5,7 @@ import java.util.Scanner;
  * tiene dos filas idénticas, entonces su determinante es igual a cero.
  *
  * <p>La clase extiende {@link Teoremas} y utiliza métodos de la clase {@link Tools}
- * para calcular determinantes. Incluye un método auxiliar para verificar si existen
+ * para mostrar matrices y calcular determinantes. Incluye un método auxiliar para verificar si existen
  * filas repetidas dentro de la matriz y asi comprobar el teorema.</p>
  *
  * @author Sara
@@ -13,13 +13,15 @@ import java.util.Scanner;
 public class Teorema33 extends Teoremas{
     Scanner sc = new Scanner(System.in);
     /**
+     * <p>Constructor de la clase Teorema33.</p>
      * Crea una nueva instancia del teorema 3.3 con la matriz dada.
      *
-     * @param matriz matriz cuadrada (nxn) en la cual se aplicará el teorema
+     * @param matriz Matriz cuadrada (nxn) en la cual se aplicará el teorema.
      */
     public Teorema33(int[][] matriz) {
         super(matriz);
     }
+
     /**
      * <p>El procedimiento de la demostracion consiste en:</p>
      * <ol>

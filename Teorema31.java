@@ -14,13 +14,15 @@ import java.util.Scanner;
 public class Teorema31 extends Teoremas {
     Scanner sc = new Scanner(System.in);
     /**
+     * <p>Constructor de la clase Teorema31.</p>
      * Crea una nueva instancia del teorema 3.1 con la matriz dada.
      *
-     * @param matriz matriz cuadrada (nxn) en la cual se aplicará el teorema
+     * @param matriz Matriz cuadrada (nxn) en la cual se aplicará el teorema.
      */
     public Teorema31(int[][] matriz) {
         super(matriz);
     }
+
     /**
      * <p>El procedimiento de la demostracion consiste en:</p>
      * <ol>
@@ -48,7 +50,7 @@ public class Teorema31 extends Teoremas {
         System.out.println("(enter para continuar)");
         sc.nextLine();
 
-        System.out.println("Ahora visualisemos la transpuesta de tu matriz:");
+        System.out.println("Ahora visualicemos la transpuesta de tu matriz:");
         System.out.println("Transpuesta:");
         int[][] At = Tools.transpuesta(matriz);
         Tools.mostrarMatriz(At);
