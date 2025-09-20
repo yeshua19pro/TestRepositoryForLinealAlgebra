@@ -1,26 +1,35 @@
 import java.util.Scanner;
-
 /**
- * Clase que demuestra el Teorema 3.7.
- * Teorema 3.7: El determinante de una matriz triangular (superior o inferior)
- * es igual al producto de los elementos de su diagonal principal.
+ * <p>Teorema 3.7 - Algebra lineal</p>
+ * Se representa de forma interactiva, este teorema establece que el determinante de una matriz triangular
+ * (superior o inferior) es igual al producto de los elementos de su diagonal principal. Además, guía al usuario
+ * mostrando la matriz, el producto de la diagonal y el determinante calculado.</p>
+ *
+ * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools}para mostrar
+ * matrices y calcular determinantes. Se incluyen verificaciones para determinar si la matriz es
+ * triangular superior, triangular inferior o ninguna de las dos, y se compara el producto de
+ * la diagonal con el determinante obtenido.</p>
  */
 public class Teorema37 extends Teoremas {
-
+    Scanner sc = new Scanner(System.in);
     /**
-     * Constructor que recibe la matriz a evaluar.
+     * <p>Constructor de la clase Teorema37.</p>
+     * Crea una nueva instancia del teorema 3.7 con la matriz proporcionada.
      *
-     * @param matriz matriz cuadrada que se va a evaluar
+     * @param matriz Matriz cuadrada (nxn) sobre la cual se aplicará el teorema.
      */
     public Teorema37(int[][] matriz) {
         super(matriz);
     }
-    Scanner sc = new Scanner(System.in);
-
     /**
-     * Aplica la comprobación del Teorema 3.7 sobre la matriz proporcionada
-     * en la clase padre (this.matriz). Imprime la matriz, el producto diagonal,
-     * el determinante (calculado por Tools.determinante) y verifica la igualdad.
+     * <p>El procedimiento de la demostración consiste en:</p>
+     * <ol>
+     *  <li>Mostrar la matriz original ingresada.</li>
+     *  <li>Verificar si la matriz es triangular superior o triangular inferior.</li>
+     *  <li>Calcular el producto de los elementos de la diagonal principal.</li>
+     *  <li>Calcular el determinante de la matriz mediante {@link Tools#determinante(int[][])}.</li>
+     *  <li>Comparar ambos valores y comprobar la validez del Teorema 3.7.</li>
+     * </ol>
      */
     @Override
     public void aplicar() {
@@ -92,7 +101,5 @@ public class Teorema37 extends Teoremas {
             System.out.println("Nota: El Teorema 3.7 se aplica a matrices triangulares. Aquí solo mostramos el producto diagonal y el determinante para comparación.");
         }
     }
-
-    
-    }
+}
 
