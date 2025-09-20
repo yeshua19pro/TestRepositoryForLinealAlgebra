@@ -13,6 +13,7 @@ import java.util.Scanner;
  * 
  * Uso:
  * Crear una instancia de Teorema33 pasando una matriz cuadrada de enteros y llamar al método aplicar().
+ * @author Sara
  */
 
 public class Teorema33 extends Teoremas{

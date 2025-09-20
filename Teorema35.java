@@ -24,6 +24,7 @@ public class Teorema35 extends Teoremas {
      * Constructor para inicializar el teorema 3.5
      * @param matriz matriz cuadrada
      */
+
     public Teorema35(int[][] matriz) {
         super(matriz); // Llama al constructor de la clase padre
         solicitarFila();
@@ -33,6 +34,7 @@ public class Teorema35 extends Teoremas {
     /**
      * Solicita al usuario que ingrese la fila a multiplicar
      */
+
     private void solicitarFila() {
         Scanner sc = new Scanner(System.in);
         int n = matriz.length;
@@ -57,6 +59,7 @@ public class Teorema35 extends Teoremas {
     /**
      * Solicita al usuario que ingrese un escalar válido
      */
+    
     private void solicitarEscalar() {
         Scanner sc = new Scanner(System.in);
         while (true) {

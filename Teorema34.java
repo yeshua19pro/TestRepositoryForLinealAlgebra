@@ -1,3 +1,4 @@
+
 /**
  * Clase que demuestra el Teorema 3.4.
  * Teorema 3.4: Si una matriz tiene una fila o una columna de ceros,
@@ -7,7 +8,6 @@
  * Autor: Nancy
  */
 import java.util.Scanner;
-
 public class Teorema34 extends Teoremas {
 
     /**
