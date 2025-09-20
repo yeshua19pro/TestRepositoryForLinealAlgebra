@@ -1,30 +1,29 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 /**
- * La clase Teorema35 implementa el teorema 3.5 de determinantes,
- * que establece que si se multiplica una fila de una matriz cuadrada por un escalar,
- * el determinante de la nueva matriz es igual al determinante original multiplicado por ese escalar.
- * 
- * Esta clase extiende la clase Teoremas y permite aplicar la operación sobre una fila específica
- * de una matriz cuadrada, mostrando la matriz original, la matriz modificada, ambos determinantes
- * y verificando si se cumple el teorema.
- * 
+ * <p>Teorema 3.5 - Algebra lineal</p>
+ * Se representa de forma interactiva, este teorema establece que el determinante de una matriz cuadrada (nxn)
+ * si se multiplica una fila de una matriz cuadrada por un escalar, el determinante de la nueva matriz es
+ * igual al determinante original multiplicado por ese escalar.
+ *
+ * <p>La clase extiende {@link Teoremas} y emplea métodos de la clase {@link Tools}
+ * para mostrar matrices y calcular determinantes. Durante la ejecución, se solicita
+ * al usuario elegir una fila y un escalar, se genera una nueva matriz,
+ * y se comprueba el enunciado del teorema mediante la comparación de determinantes.</p>
+ *
  * @author Miguel Angel
- * @see Teoremas
- * @see Tools
  */
 public class Teorema35 extends Teoremas {
-
     Scanner sc = new Scanner(System.in);
     private int fila;
     private int escalar;
-
     /**
-     * Constructor para inicializar el teorema 3.5
-     * @param matriz matriz cuadrada
+     * <p>Constructor de la clase Teorema35.</p>
+     * Crea una nueva instancia del Teorema 3.5 con la matriz dada,
+     * solicitando la fila y el escalar a utilizar.
+     *
+     * @param matriz Matriz cuadrada (nxn) en la cual se aplicará el teorema.
      */
-
     public Teorema35(int[][] matriz) {
         super(matriz); // Llama al constructor de la clase padre
         solicitarFila();
@@ -32,53 +31,16 @@ public class Teorema35 extends Teoremas {
     }
 
     /**
-     * Solicita al usuario que ingrese la fila a multiplicar
+     * <p>El procedimiento de la demostración consiste en:</p>
+     * <ol>
+     *  <li>Solicitar al usuario una fila de la matriz y un escalar.</li>
+     *  <li>Mostrar la matriz original.</li>
+     *  <li>Multiplicar la fila seleccionada por el escalar.</li>
+     *  <li>Mostrar la nueva matriz.</li>
+     *  <li>Calcular y mostrar los determinantes de ambas matrices.</li>
+     *  <li>Confirmar si se cumple el Teorema 3.5.</li>
+     * </ol>
      */
-
-    private void solicitarFila() {
-        Scanner sc = new Scanner(System.in);
-        int n = matriz.length;
-        System.out.println("Bienvenido al Teorema 3.5!");
-        System.out.println("El Teorema 3.5 establece que si se multiplica una fila o columna de una matriz cuadrada por un numero real , el determinante de la nueva matriz sera igual al determinante original multiplicaada por el mismo numero real.");
-        while (true) {
-            try {
-                System.out.print("Ingrese la fila a multiplicar (1 a " + n + "): ");
-                fila = sc.nextInt() - 1; // convertir a índice 0-based
-                if (fila < 0 || fila >= n) {
-                    System.out.println("Error: La fila debe estar entre 1 y " + n + ".");
-                    continue;
-                }
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Error: Debe ingresar un número entero.");
-                sc.next(); // limpiar buffer
-            }
-        }
-    }
-
-    /**
-     * Solicita al usuario que ingrese un escalar válido
-     */
-    
-    private void solicitarEscalar() {
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            try {
-                System.out.print("Ingrese el escalar para multiplicar la fila " + (fila + 1) + ": ");
-                escalar = sc.nextInt();
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("Error: Debe ingresar un número entero.");
-                sc.next(); // limpiar buffer
-            }
-        }
-    }
-
-    /**
-     * Aplica el teorema 3.5 multiplicando la fila especificada por el escalar
-     * y mostrando los resultados.
-     */
-
     @Override
     public void aplicar() {
         int n = matriz.length;
@@ -114,5 +76,47 @@ public class Teorema35 extends Teoremas {
         System.out.println("\nDeterminante original: " + detOriginal);
         System.out.println("Determinante nueva: " + detNueva);
         System.out.println("¿Se cumple el teorema 3.5? " + (detNueva == detOriginal * escalar));
+    }
+
+    // Metodos internos (solicitar la fila y el escalar)
+    /**
+     * <p>Solicita al usuario que ingrese la fila a multiplicar.</p>
+     * <p>Se asegura de que el índice ingresado sea válido.</p>
+     */
+    private void solicitarFila() {
+        Scanner sc = new Scanner(System.in);
+        int n = matriz.length;
+        System.out.println("Bienvenido al Teorema 3.5!");
+        System.out.println("El Teorema 3.5 establece que si se multiplica una fila o columna de una matriz cuadrada por un numero real , el determinante de la nueva matriz sera igual al determinante original multiplicaada por el mismo numero real.");
+        while (true) {
+            try {
+                System.out.print("Ingrese la fila a multiplicar (1 a " + n + "): ");
+                fila = sc.nextInt() - 1; // convertir a índice 0-based
+                if (fila < 0 || fila >= n) {
+                    System.out.println("Error: La fila debe estar entre 1 y " + n + ".");
+                    continue;
+                }
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Debe ingresar un número entero.");
+                sc.next(); // limpiar buffer
+            }
+        }
+    }
+    /**
+     * <p>Solicita al usuario que ingrese un escalar válido.</p>
+     */
+    private void solicitarEscalar() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.print("Ingrese el escalar para multiplicar la fila " + (fila + 1) + ": ");
+                escalar = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Debe ingresar un número entero.");
+                sc.next(); // limpiar buffer
+            }
+        }
     }
 }
