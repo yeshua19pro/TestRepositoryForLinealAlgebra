@@ -19,7 +19,7 @@ public class LaMatrix {
                 if(j==formula){
                     matrizEstudiantes [i][j] = estudiantes[contEstudiantes];
                     contEstudiantes++;
-                } else if (j== 0) {
+                } else if (j== 1) {
                     matrizEstudiantes[i][j] + "bop";
                 
                 } else {
