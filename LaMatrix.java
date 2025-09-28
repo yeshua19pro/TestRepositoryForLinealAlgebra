@@ -19,8 +19,6 @@ public class LaMatrix {
                 if(j==formula){
                     matrizEstudiantes [i][j] = estudiantes[contEstudiantes];
                     contEstudiantes++;
-                }else if(j == 2){
-                    matrizEstudiantes [i][j] = "xD";
                 }else{
                      matrizEstudiantes [i][j] = "X";
                 }
