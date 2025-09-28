@@ -10,6 +10,7 @@ public class LaMatrix {
         String[][] matrizEstudiantes = new String[4][6];
 
         String[] estudiantes = {"sunny", "nancy", "sara", "miguel"};
+        String[] id = {"01", "02", "03","04"};
 
         int formula = matrizEstudiantes[0].length/2; // si es columna de medio
         int contEstudiantes = 0;
@@ -23,6 +24,9 @@ public class LaMatrix {
                      matrizEstudiantes [i][j] = "X";
                 }
             }
+        }
+        for (int i = 0; i < matrizEstudiantes.length; i++) {
+            matrizEstudiantes[i][0] = id[i];
         }
         
         for (int i = 0; i < matrizEstudiantes.length; i++) {
