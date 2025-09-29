@@ -19,8 +19,13 @@ public class LaMatrix {
                 if(j==formula){
                     matrizEstudiantes [i][j] = estudiantes[contEstudiantes];
                     contEstudiantes++;
+
+                } else if ( j == 1) {
+                    matrizEstudiantes [i][j] = "bop";
+
                 } else if (j == matrizEstudiantes[i].length - 2) { // penultima columna
                      matrizEstudiantes[i][j] = "O";
+
                 }else{
                      matrizEstudiantes [i][j] = "X";
                 }
